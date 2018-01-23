@@ -1,4 +1,4 @@
-package com.example.snippets.lamda.person;
+package com.example.snippets.predicate.person;
 
 public class Person {
 	private int Age;

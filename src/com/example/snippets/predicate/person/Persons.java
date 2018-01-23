@@ -1,6 +1,6 @@
-package com.example.snippets.lamda.person;
+package com.example.snippets.predicate.person;
 
-import static com.example.snippets.lamda.person.PersonPredicate.isAdultMale;
+import static com.example.snippets.predicate.person.PersonPredicate.isAdultMale;
 
 import java.util.List;
 import java.util.stream.Collectors;
