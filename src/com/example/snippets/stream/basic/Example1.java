@@ -1,6 +1,7 @@
 package com.example.snippets.stream.basic;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -26,6 +27,31 @@ public class Example1 {
 		
 		//get count of empty string
 		long count = strings.stream().filter(string->string.isEmpty()).count();
+		
+		
+		//sorted
+		Random rnd = new Random();
+		rnd.ints().limit(10).sorted().forEach(System.out::println);
+		
+		
+		List<String> strings2 = Arrays.asList("abc","","dc","edf");
+		long count2= strings2.parallelStream().filter(string-> string.isEmpty()).count();
+		
+		//collectors
+		List<String> filters = strings.stream().filter(str->!str.isEmpty()).collect(Collectors.toList());
+		System.out.println(filters);
+		
+		String mergedStr = strings.stream().filter(str->!str.isEmpty()).collect(Collectors.joining(", "));
+		System.out.println(mergedStr);
+		
+		
+		//statistics - min max avg sum
+		IntSummaryStatistics stats = numbers.stream().mapToInt((x)->x).summaryStatistics();
+		System.out.println(stats.getMax()+","+ stats.getSum());
+		
+		
+		
+		
 		
 	}
 
