@@ -1,4 +1,4 @@
-package com.example.exercises.exercise1;
+package com.example.exercises.days_between;
 
 public class FindDaysBetween {
 
