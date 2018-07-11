@@ -16,7 +16,7 @@ public class Thread2 {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            String randomStr = RandomStringUtils.randomAlphanumeric(8);
+            String randomStr = RandomStringUtils.random(8, 65, 90, true, true);
             System.out.println("THREAD RUNNING AT" + System.nanoTime() + ":" + randomStr);
         };
 
