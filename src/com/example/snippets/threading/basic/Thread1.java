@@ -25,5 +25,6 @@ public class Thread1 {
         t2.setDaemon(true);
         t1.start();
         t2.start();
+
     }
 }
