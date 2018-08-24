@@ -34,14 +34,15 @@ public class Example1 {
         // hot observable - reecive only future values
         ConnectableObservable<Long> hotObservable = Observable.interval(1, TimeUnit.SECONDS).publish();
         hotObservable.subscribe(val -> System.out.println("OBS1: " + val));
+
         // now that observable will emit
         hotObservable.connect();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         hotObservable.subscribe(val -> System.out.println("OBS2: " + val));
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
     }
 
