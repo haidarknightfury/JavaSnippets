@@ -12,6 +12,7 @@ import io.reactivex.observables.ConnectableObservable;
 public class Example1 {
 
     public static void main(String[] args) throws InterruptedException {
+
         // Just is a factory method for creating an Observable
         Flowable.just("Hello world").subscribe(System.out::println);
 
