@@ -8,8 +8,7 @@ import java.util.stream.Collectors;
 
 public class Example1 {
     // stream() -Returns a sequential stream considering collection as its source.
-    // parallelStream() - Returns a parallel Stream considering collection as its
-    // source.
+    // parallelStream() - Returns a parallel Stream considering collection as its source.
 
     public static void main(String[] args) {
 
