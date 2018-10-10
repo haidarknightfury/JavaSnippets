@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Decrypt {
 
-    public static final String START = "A";
-    public static final String END = "Z";
+    public static final String START = "a";
+    public static final String END = "z";
 
     public static void main(String[] args) {
-        String phrase = "WIMGSOAENPT NEBNEACVTRZENAALTUL QICDXOBOUKJLNTEJ";
+        String phrase = "sl ryhrolu cvbz vizlycl";
 
         for (int i = 1; i <= 26; i++) {
             System.out.println("RESULT: " + decrypt(phrase, i));

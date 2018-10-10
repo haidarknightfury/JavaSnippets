@@ -23,9 +23,9 @@ public class Thread2 {
         for (int i = 0; i < array.length; i++) {
             array[i] = new Thread(runnable);
         }
+        
         while (true) {
             try {
-
                 for (int i = 0; i < array.length; i++) {
                     array[i].start();
                 }
