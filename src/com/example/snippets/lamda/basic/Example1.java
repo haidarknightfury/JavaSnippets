@@ -24,9 +24,11 @@ public class Example1 {
         System.out.println(Tester.operate(4, 4, division));
 
         MessageService messageService = message -> System.out.println("Hello" + message);
-
         messageService.sayMessage("World");
 
+        // Test QuadFunction
+        QuadFunction<Integer, Integer, Integer, Integer> quadFunction = (a, b, c) -> a + b + c;
+        System.out.println(String.format("result of quad function is %s", quadFunction.operate(1, 2, 3)));
     }
 
     interface MathOperation {
@@ -40,4 +42,9 @@ public class Example1 {
     private int operate(int a, int b, MathOperation mathOperation) {
         return mathOperation.operation(a, b);
     }
+
+    interface QuadFunction<T, U, V, W> {
+        T operate(U u, V v, W w);
+    }
+
 }

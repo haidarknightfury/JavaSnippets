@@ -45,6 +45,11 @@ public class Example4 {
 
         // zones.forEach(System.out::println);
 
+        ZoneId z = ZoneId.systemDefault();
+        System.out.println(z.getRules());
+        ZonedDateTime timeOfDefaultTimeZone = ZonedDateTime.now(z);
+        System.out.println(timeOfDefaultTimeZone.toLocalTime());
+
     }
 
 }

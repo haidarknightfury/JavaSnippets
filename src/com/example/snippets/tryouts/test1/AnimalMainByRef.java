@@ -2,7 +2,7 @@ package com.example.snippets.tryouts.test1;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class AnimalMain implements Animal {
+public class AnimalMainByRef implements AnimalInterfaceWithClass {
 
     @Override
     public void display(DefaultAnimal an) {
@@ -13,7 +13,7 @@ public class AnimalMain implements Animal {
         DefaultAnimal animal = new DefaultAnimal();
         animal.setName("DOG");
 
-        AnimalMain an = new AnimalMain();
+        AnimalMainByRef an = new AnimalMainByRef();
         an.display(animal);
 
         AtomicBoolean myVar = new AtomicBoolean(false);
