@@ -1,6 +1,6 @@
 package com.example.snippets.tryouts.test1;
 
-public interface Animal {
+public interface AnimalInterfaceWithClass {
     class DefaultAnimal {
         private String name;
 

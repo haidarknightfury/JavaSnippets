@@ -1,8 +1,11 @@
 package com.example.snippets.stream.advanced;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -29,15 +32,26 @@ public class Example1 {
         // anyMatch && allMatch
 
         // Use of collectors - transform into List, Set or Map
-        List<Animal> animals = Arrays.asList(new Animal("HD", "Dog"), new Animal("HA", "Cat"));
+        List<Animal> animals = Arrays.asList(new Animal("HD", "Dog"), new Animal("HA", "Cat"), new Animal("HA", "Cat"), new Animal("HAB", "Cat"));
         animals.stream().filter(an -> an.name.startsWith("H")).collect(Collectors.toList());
 
         // Use of collectors to collect into a Map
         Map<String, List<Animal>> animalByCategory = animals.stream().collect(Collectors.groupingBy(an -> an.category));
         animalByCategory.forEach((cat, listofAnimals) -> System.out.format("type %s: %s", cat, listofAnimals));
+        System.out.println();
 
         // https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
 
+        // Grouping by a list of values
+        Function<Animal, List<Object>> groupByAnimalDetails = anim -> Arrays.asList(anim.category, anim.name);
+        Map<Object, List<Animal>> mapAnimals = animals.stream().collect(Collectors.groupingBy(groupByAnimalDetails, Collectors.toList()));
+        System.out.println("Grouping Animals by category and name");
+        System.out.println(mapAnimals);
+
+        List<List<Animal>> animalsGrouped = new ArrayList<>(mapAnimals.values());
+        System.out.println("List of List of animals grouped" + animalsGrouped);
+        List<Animal> allAnimals = animalsGrouped.stream().flatMap(Collection::stream).collect(Collectors.toList());
+        System.out.println("All Animals" + allAnimals);
     }
 
 }
