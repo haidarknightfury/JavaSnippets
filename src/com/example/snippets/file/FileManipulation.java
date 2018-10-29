@@ -26,9 +26,10 @@ public class FileManipulation {
         System.out.println(realPath.toString());
 
         // FileSystem, WatchKey (listeners on directories) - use Path class instead of file
+
         // CopyFile();
         // deleteFIle();
-        // createDir();
+        createDir();
 
         // readAndWriteTextFiles();
         NavigateDirectory();
@@ -45,6 +46,11 @@ public class FileManipulation {
         Files.delete(toDelete);
     }
 
+    /**
+     * Create a new directory - move lorem.txt to another newDir directory
+     *
+     * @throws IOException
+     */
     public static void createDir() throws IOException {
         Path source = Paths.get("C:\\NDC\\JavaSnippets\\files\\lorem.txt");
         Path newDir = Paths.get("C:\\NDC\\JavaSnippets\\files\\newDir");
@@ -54,12 +60,17 @@ public class FileManipulation {
         Files.move(source, newDir.resolve(source.getFileName()), StandardCopyOption.REPLACE_EXISTING);
     }
 
+    /**
+     * Copy a file lines to another file targer
+     */
     public static void readAndWriteTextFiles() {
         Path source = Paths.get("C:\\NDC\\JavaSnippets\\files\\lorem.txt");
         Path target = Paths.get("C:\\NDC\\JavaSnippets\\files\\target.txt");
 
         Charset charset = Charset.forName("US-ASCII");
         ArrayList<String> lines = new ArrayList<>();
+
+        // Copy all lines to an array list lines
         try (BufferedReader reader = Files.newBufferedReader(source)) {
             String line = null;
             while ((line = reader.readLine()) != null) {
@@ -69,6 +80,7 @@ public class FileManipulation {
             System.err.println(e.getMessage());
         }
 
+        // copy written lines to another file
         try (BufferedWriter writer = Files.newBufferedWriter(target, charset)) {
             Iterator<String> iterator = lines.iterator();
             while (iterator.hasNext()) {
