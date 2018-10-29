@@ -26,6 +26,11 @@ public class MapKeyLists {
 
         System.out.println(val);
         System.out.println(val2);
+
+        List<String> list1 = Arrays.asList("1", "2", "3", "4");
+        List<String> list2 = Arrays.asList("1", "2", "3");
+
+        System.out.println(list1.containsAll(list2));
     }
 
 }

@@ -52,6 +52,7 @@ public class Example1 {
         System.out.println("List of List of animals grouped" + animalsGrouped);
         List<Animal> allAnimals = animalsGrouped.stream().flatMap(Collection::stream).collect(Collectors.toList());
         System.out.println("All Animals" + allAnimals);
+
     }
 
 }
