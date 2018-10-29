@@ -38,9 +38,6 @@ public class MachineNumberGuesser {
 			
 			System.out.println("NUMBER FOUND" + machineInput);
 			
-			
-			
-			
 			sc.close();
 			
 		
