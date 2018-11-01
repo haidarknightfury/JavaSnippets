@@ -1,4 +1,4 @@
-package com.example.snippets.file;
+package com.example.snippets.file.file_watching;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;

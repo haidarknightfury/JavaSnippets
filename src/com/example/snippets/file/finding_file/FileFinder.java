@@ -1,4 +1,4 @@
-package com.example.snippets.file;
+package com.example.snippets.file.finding_file;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;

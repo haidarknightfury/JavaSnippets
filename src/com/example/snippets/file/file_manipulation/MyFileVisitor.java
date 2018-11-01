@@ -1,4 +1,4 @@
-package com.example.snippets.file;
+package com.example.snippets.file.file_manipulation;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
