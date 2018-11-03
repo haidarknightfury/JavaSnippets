@@ -23,7 +23,7 @@ public class MyThread extends Thread {
                 e.printStackTrace();
             }
 
-            this.target.call(this.threadId);
+            this.target.print(this.threadId);
         }
 
     }
