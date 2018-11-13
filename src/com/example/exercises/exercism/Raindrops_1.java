@@ -8,9 +8,6 @@ public class Raindrops_1 {
 
     public static void main(String[] args) {
         StringBuilder result = new StringBuilder("");
-
-        List<Integer> refactors = getFactors(30);
-
         List<Integer> factors = getFactors(30).stream().filter(n -> n == 3 || n == 7 || n == 5).collect(Collectors.toList());
         factors.forEach(n -> {
             if (n == 3) {
