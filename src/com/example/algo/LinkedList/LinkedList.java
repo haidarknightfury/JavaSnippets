@@ -16,17 +16,25 @@ public class LinkedList<T extends Serializable & Comparable<T>> {
         }
 
         else {
-            findLast().setNext(node);
+            getLast().setNext(node);
         }
         return node;
     }
 
-    public Node<T> findLast() {
+    public Node<T> getLast() {
         Node<T> current = this.head;
         while (current.getNext() != null) {
             current = current.getNext();
         }
         return current;
+    }
+
+    public Node<T> findNode(T value) {
+        Node<T> current = this.head;
+        while (current != null && current.getData().compareTo(value) != 0) {
+            current = current.getNext();
+        }
+        return current != null && current.getData().compareTo(value) == 0 ? current : null;
     }
 
     public void print() {

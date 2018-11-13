@@ -32,7 +32,7 @@ public class Node<T extends Serializable & Comparable<T>> {
 
     @Override
     public String toString() {
-        return "Node [next=" + this.next + ", data=" + this.data + "]";
+        return "Node [data=" + this.data + "]";
     }
 
 }
