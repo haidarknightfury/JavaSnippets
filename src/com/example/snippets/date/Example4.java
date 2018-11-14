@@ -52,7 +52,7 @@ public class Example4 {
         ZonedDateTime timeOfDefaultTimeZone = ZonedDateTime.now(z);
         System.out.println(timeOfDefaultTimeZone.toLocalTime());
 
-        System.out.println(getNumDaysBtw(LocalDate.of(2018, 12, 31)));
+        System.out.println("You have only " + getNumDaysBtw(LocalDate.of(2018, 12, 31)) + " day Left");
 
     }
 
