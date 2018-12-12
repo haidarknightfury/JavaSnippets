@@ -1,0 +1,1 @@
+http://lhechma.blogspot.com/2018/10/specification-pattern-in-java.html
