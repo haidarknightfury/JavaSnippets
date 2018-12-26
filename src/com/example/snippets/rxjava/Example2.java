@@ -14,6 +14,7 @@ public class Example2 {
         strings.count().toFlowable().subscribe(System.out::println);
 
         // 8. Reduce operations
+        System.out.println("--REDUCE OPERATIONS--");
         strings.map(tweet -> tweet.length()).reduce(0, (acc, el) -> acc + el).toFlowable().subscribe(System.out::println);
 
     }
