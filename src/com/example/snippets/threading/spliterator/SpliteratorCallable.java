@@ -20,7 +20,7 @@ public class SpliteratorCallable {
         Random random = new Random();
         String tg = "ABCDEDGHIJKLMNOPQRSTUVWXYZ";
 
-        List<Utility> utilities = Stream.generate(() -> new Utility(String.valueOf(tg.charAt(random.nextInt(tg.length()))))).limit(10).collect(Collectors.toList());
+        List<Utility> utilities = Stream.generate(() -> new Utility(String.valueOf(tg.charAt(random.nextInt(tg.length()))))).limit(100).collect(Collectors.toList());
 
         Spliterator<Utility> split1 = utilities.spliterator();
         Spliterator<Utility> split2 = split1.trySplit();
