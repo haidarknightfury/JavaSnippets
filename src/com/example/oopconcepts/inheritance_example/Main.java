@@ -8,6 +8,7 @@ public class Main {
         // Extended/Child class can be converted to BaseClass but not inverse - Can be upcasted but not downcasted
         BasicPerson basePerson = specificPerson;
         System.out.println(basePerson.toString());
+        System.out.println(basePerson.getClass());
 
         BasicPerson anotherBasicPerson = new BasicPerson("baka", "japan");
         SpecificPerson anotherSpecificPerson = (SpecificPerson) anotherBasicPerson;
