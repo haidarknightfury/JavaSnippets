@@ -1,0 +1,25 @@
+package com.example.patterns.interpreter_pattern.basic;
+
+public class InterpreterEngine {
+
+    public int add(String input) {
+        String[] tokens = this.interpret(input);
+        int num1 = Integer.parseInt(tokens[0]);
+        int num2 = Integer.parseInt(tokens[1]);
+        return num1 + num2;
+    }
+
+    public String[] interpret(String input) {
+        String string = input.replaceAll("[^0-9]", " ");
+        string = string.replaceAll("( )+", " ").trim();
+        String[] tokens = string.split(" ");
+        return tokens;
+    }
+
+    public int multiply(String input) {
+        String[] tokens = this.interpret(input);
+        int num1 = Integer.parseInt(tokens[0]);
+        int num2 = Integer.parseInt(tokens[1]);
+        return num1 * num2;
+    }
+}
