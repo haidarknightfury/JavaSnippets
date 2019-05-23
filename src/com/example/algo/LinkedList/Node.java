@@ -6,28 +6,28 @@ import java.io.Serializable;
 
 public class Node<T extends Serializable & Comparable<T>> {
 
-    public Node(T data) {
-        this.data = data;
-    }
-
     private Node<T> next;
 
     private T data;
 
-    public Node<T> getNext() {
-        return this.next;
-    }
-
-    public void setNext(Node<T> next) {
-        this.next = next;
+    public Node(T data) {
+        this.data = data;
     }
 
     public T getData() {
         return this.data;
     }
 
+    public Node<T> getNext() {
+        return this.next;
+    }
+
     public void setData(T data) {
         this.data = data;
+    }
+
+    public void setNext(Node<T> next) {
+        this.next = next;
     }
 
     @Override
