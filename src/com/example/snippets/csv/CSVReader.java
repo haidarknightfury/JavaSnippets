@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.stream.Stream;
 
 public class CSVReader {
 
@@ -13,7 +14,6 @@ public class CSVReader {
     }
 
     final String SEPARATOR = ",";
-
     String line = "";
 
     public void read(String path) throws FileNotFoundException, IOException {
@@ -21,6 +21,7 @@ public class CSVReader {
             while ((this.line = br.readLine()) != null) {
                 System.out.println(this.line);
                 String output[] = this.line.split(this.SEPARATOR);
+                Stream.of(output).map(String::toUpperCase).forEach(System.out::println);
             }
         }
     }
