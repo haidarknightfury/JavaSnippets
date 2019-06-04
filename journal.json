@@ -1,0 +1,2 @@
+{"accountNo":1,"owner":"Dany","sequenceId":0,"createdTime":1559647026910,"eventClassName":"AccountCreateEvent","realTime":true}
+{"accountNo":0,"owner":"Jon","sequenceId":1,"createdTime":1559647043440,"eventClassName":"AccountCreateEvent","realTime":true}

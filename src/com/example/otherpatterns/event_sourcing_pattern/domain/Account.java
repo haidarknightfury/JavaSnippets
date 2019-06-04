@@ -2,6 +2,9 @@ package com.example.otherpatterns.event_sourcing_pattern.domain;
 
 import java.math.BigDecimal;
 
+import com.example.otherpatterns.event_sourcing_pattern.event.AccountCreateEvent;
+import com.example.otherpatterns.event_sourcing_pattern.event.MoneyDepositEvent;
+import com.example.otherpatterns.event_sourcing_pattern.event.MoneyTransferEvent;
 import com.example.otherpatterns.event_sourcing_pattern.state.AccountAggregate;
 
 public class Account {
@@ -11,6 +14,12 @@ public class Account {
     private BigDecimal money;
 
     public Account(int accountNo, String owner, BigDecimal money) {
+        this.accountNo = accountNo;
+        this.owner = owner;
+        this.money = money;
+    }
+
+    public Account(int accountNo, String owner) {
         this.accountNo = accountNo;
         this.owner = owner;
         this.money = BigDecimal.ZERO;
@@ -26,10 +35,6 @@ public class Account {
 
     public String getOwner() {
         return this.owner;
-    }
-
-    public void setMoney(BigDecimal money) {
-        this.money = money;
     }
 
     public Account copy() {
@@ -59,6 +64,27 @@ public class Account {
         if (realTime) {
             System.out.println("External API Call");
         }
+    }
+
+    public void handleEvent(AccountCreateEvent accountCreateEvent) {
+        AccountAggregate.putAccount(this);
+    }
+
+    public void handleEvent(MoneyDepositEvent moneyDepositEvent) {
+        this.handleDeposit(moneyDepositEvent.getMoney(), moneyDepositEvent.isRealTime());
+    }
+
+    public void handleTransferFromEvent(MoneyTransferEvent moneyTransferEvent) {
+        this.handleWithdrawal(moneyTransferEvent.getMoney(), moneyTransferEvent.isRealTime());
+    }
+
+    public void handleTransferToEvent(MoneyTransferEvent moneyTransferEvent) {
+        this.handleDeposit(moneyTransferEvent.getMoney(), moneyTransferEvent.isRealTime());
+    }
+
+    @Override
+    public String toString() {
+        return "Account [accountNo=" + this.accountNo + ", owner=" + this.owner + ", money=" + this.money + "]";
     }
 
 }
