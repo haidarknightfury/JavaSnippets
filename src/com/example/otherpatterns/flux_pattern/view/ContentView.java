@@ -1,8 +1,8 @@
-package com.example.otherpatterns.flux.view;
+package com.example.otherpatterns.flux_pattern.view;
 
-import com.example.otherpatterns.flux.action.ContentItem;
-import com.example.otherpatterns.flux.store.ContentStore;
-import com.example.otherpatterns.flux.store.Store;
+import com.example.otherpatterns.flux_pattern.action.ContentItem;
+import com.example.otherpatterns.flux_pattern.store.ContentStore;
+import com.example.otherpatterns.flux_pattern.store.Store;
 
 public class ContentView implements View {
 

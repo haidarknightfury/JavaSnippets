@@ -1,4 +1,4 @@
-package com.example.otherpatterns.flux.action;
+package com.example.otherpatterns.flux_pattern.action;
 
 public abstract class Action {
     private ActionType type;

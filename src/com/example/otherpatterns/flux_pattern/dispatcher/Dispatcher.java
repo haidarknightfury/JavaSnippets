@@ -1,14 +1,14 @@
-package com.example.otherpatterns.flux.dispatcher;
+package com.example.otherpatterns.flux_pattern.dispatcher;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import com.example.otherpatterns.flux.action.Action;
-import com.example.otherpatterns.flux.action.ContentItem;
-import com.example.otherpatterns.flux.action.ContentAction;
-import com.example.otherpatterns.flux.action.MenuAction;
-import com.example.otherpatterns.flux.action.MenuItem;
-import com.example.otherpatterns.flux.store.Store;
+import com.example.otherpatterns.flux_pattern.action.Action;
+import com.example.otherpatterns.flux_pattern.action.ContentAction;
+import com.example.otherpatterns.flux_pattern.action.ContentItem;
+import com.example.otherpatterns.flux_pattern.action.MenuAction;
+import com.example.otherpatterns.flux_pattern.action.MenuItem;
+import com.example.otherpatterns.flux_pattern.store.Store;
 
 public class Dispatcher {
 

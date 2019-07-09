@@ -1,9 +1,9 @@
-package com.example.otherpatterns.flux.view;
+package com.example.otherpatterns.flux_pattern.view;
 
-import com.example.otherpatterns.flux.action.MenuItem;
-import com.example.otherpatterns.flux.dispatcher.Dispatcher;
-import com.example.otherpatterns.flux.store.MenuStore;
-import com.example.otherpatterns.flux.store.Store;
+import com.example.otherpatterns.flux_pattern.action.MenuItem;
+import com.example.otherpatterns.flux_pattern.dispatcher.Dispatcher;
+import com.example.otherpatterns.flux_pattern.store.MenuStore;
+import com.example.otherpatterns.flux_pattern.store.Store;
 
 public class MenuView implements View {
 

@@ -1,9 +1,9 @@
-package com.example.otherpatterns.flux.store;
+package com.example.otherpatterns.flux_pattern.store;
 
-import com.example.otherpatterns.flux.action.Action;
-import com.example.otherpatterns.flux.action.ActionType;
-import com.example.otherpatterns.flux.action.ContentItem;
-import com.example.otherpatterns.flux.action.ContentAction;
+import com.example.otherpatterns.flux_pattern.action.Action;
+import com.example.otherpatterns.flux_pattern.action.ActionType;
+import com.example.otherpatterns.flux_pattern.action.ContentAction;
+import com.example.otherpatterns.flux_pattern.action.ContentItem;
 
 public class ContentStore extends Store {
 

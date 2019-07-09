@@ -1,10 +1,10 @@
-package com.example.otherpatterns.flux.store;
+package com.example.otherpatterns.flux_pattern.store;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import com.example.otherpatterns.flux.action.Action;
-import com.example.otherpatterns.flux.view.View;
+import com.example.otherpatterns.flux_pattern.action.Action;
+import com.example.otherpatterns.flux_pattern.view.View;
 
 public abstract class Store {
 

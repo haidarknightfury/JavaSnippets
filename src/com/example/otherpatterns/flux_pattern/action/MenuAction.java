@@ -1,4 +1,4 @@
-package com.example.otherpatterns.flux.action;
+package com.example.otherpatterns.flux_pattern.action;
 
 public class MenuAction extends Action {
     private MenuItem menuItem;
