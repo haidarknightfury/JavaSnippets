@@ -16,16 +16,16 @@ public class Example1 {
         }
     };
 
-    static IncrementerThread incremer = new IncrementerThread(counter) {
+    static IncrementerThread incremer = new IncrementerThread(counter, "static") {
         @Override
         public void run() {
-            System.out.println("hello");
+            System.out.println("hello  " + counter.get());
         }
     };
 
     public static void main(String[] args) {
-        IncrementerThread t1 = new IncrementerThread(counter);
-        IncrementerThread t2 = new IncrementerThread(counter);
+        IncrementerThread t1 = new IncrementerThread(counter, "t1"); // even if static, another instance of thread local will be passed
+        IncrementerThread t2 = new IncrementerThread(counter, "t2");
 
         t1.start();
         t2.start();
