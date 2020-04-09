@@ -9,7 +9,7 @@ public class Decrypt {
     public static final String END = "z";
 
     public static void main(String[] args) {
-        String phrase = "bien joue haidar";
+        String phrase = "Vfan ean wibi grv ckraye";
 
         for (int i = 1; i <= 26; i++) {
             System.out.println("RESULT: " + decrypt(phrase, i));
