@@ -8,36 +8,35 @@ import java.util.function.Predicate;
 
 public class Validator<T> {
 
-    public static <T> Validator<T> of(T t) {
-        return new Validator<T>(Objects.requireNonNull(t));
-    }
+	private final T t;
+	private final List<Throwable> exceptions = new ArrayList<Throwable>();
 
-    private final T t;
+	private Validator(T t) {
+		this.t = t;
+	}
 
-    final List<Throwable> exceptions = new ArrayList<Throwable>();
+	public static <T> Validator<T> of(T t) {
+		return new Validator<T>(Objects.requireNonNull(t));
+	}
 
-    private Validator(T t) {
-        this.t = t;
-    }
+	public T get() throws IllegalStateException {
+		if (this.exceptions.isEmpty()) {
+			return this.t;
+		}
+		IllegalStateException e = new IllegalStateException();
+		this.exceptions.forEach(e::addSuppressed);
+		throw e;
+	}
 
-    public T get() throws IllegalStateException {
-        if (this.exceptions.isEmpty()) {
-            return this.t;
-        }
-        IllegalStateException e = new IllegalStateException();
-        this.exceptions.forEach(e::addSuppressed);
-        throw e;
-    }
+	public <U> Validator<T> validate(Function<T, U> projection, Predicate<U> validation, String message) {
+		return this.validate(projection.andThen(validation::test)::apply, message);
+	}
 
-    public <U> Validator<T> validate(Function<T, U> projection, Predicate<U> validation, String message) {
-        return this.validate(projection.andThen(validation::test)::apply, message);
-    }
-
-    public Validator<T> validate(Predicate<T> validation, String message) {
-        if (!validation.test(this.t)) {
-            this.exceptions.add(new IllegalStateException(message));
-        }
-        return this;
-    }
+	public Validator<T> validate(Predicate<T> validation, String message) {
+		if (!validation.test(this.t)) {
+			this.exceptions.add(new IllegalStateException(message));
+		}
+		return this;
+	}
 
 }
